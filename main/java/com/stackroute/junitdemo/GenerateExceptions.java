@@ -1,22 +1,40 @@
 package com.stackroute.junitdemo;
 
 public class GenerateExceptions {
-    public static void main(String[] args) {
+    public String generateExceptions(int number) {
         try {
-            throw new NegativeArraySizeException(); //Throws negative size exceptions
+            int[] number1 = new int[number];
+// throw new NegativeArraySizeException();
         } catch (NegativeArraySizeException e1) {
-            System.out.println(e1.toString()); //Prints exception which converted to String
+            e1.printStackTrace();
+            System.out.println(e1.toString());
         }
-        try {
-            throw new IndexOutOfBoundsException(); //Throws IndexOutOfBoundsException
-        } catch (IndexOutOfBoundsException e2) {
-            System.out.println(e2.toString()); //Prints exception which converted to String
-        }
-        try {
-            throw new NullPointerException();
-        } catch (NullPointerException e3) { //Prints Null Pointer Exception
-            System.out.println(e3.toString());
-        }
+        return "exception raised";
     }
-}
+    public String generateIndexOutOfException(int[] number,int size) {
+        try {
+            int[] number1 = new int[size];
 
+//throw new IndexOutOfBoundsException();
+        } catch (IndexOutOfBoundsException e2) {
+            System.out.println(e2.toString());
+            e2.printStackTrace();
+        }
+        return "exception raised";
+    }
+    public String generateNullPointerException(String s){
+        try {
+//throw new NullPointerException();
+            s.split(",");
+            if(s==null){
+
+            }
+
+        } catch (NullPointerException e3) {
+            System.out.println(e3.toString());
+            e3.printStackTrace();
+        }
+        return "exception raised";
+    }
+
+}
